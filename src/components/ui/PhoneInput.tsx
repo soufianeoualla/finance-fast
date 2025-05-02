@@ -382,12 +382,11 @@ export function PhoneInput({ onValueChange, ...props }: PhoneInputProps) {
                     className="flex items-center gap-2"
                   >
                     <div className="flex items-center gap-2">
-
-                    <span className="text-base">{country.flag}</span>
-                    <span>{country.name}</span>
-                    <span className="text-muted-foreground ml-auto">
-                      {country.dialCode}
-                    </span>
+                      <span className="text-base">{country.flag}</span>
+                      <span>{country.name}</span>
+                      <span className="text-muted-foreground ml-auto">
+                        {country.dialCode}
+                      </span>
                     </div>
                     <LuCheck
                       className={cn(

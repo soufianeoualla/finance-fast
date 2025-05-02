@@ -7,8 +7,8 @@ import RollLogos from "./RollLogos";
 
 const Hero = () => {
   return (
-    <div className="relative">
-      <section className=" flex flex-col items-center justify-center mt-[154px]  max-w-[1440px] mx-auto">
+    <div className="relative ">
+      <section className=" flex flex-col items-center justify-center mt-[154px]  max-w-[1440px] mx-auto ">
         <h1 className="grifter text-[48px] leading-[54px] text-center w-2/3">
           Simplify Your International Transactions with{" "}
           <span className="grifter bg-gradient-to-r from-[#6364FF] to-[#563ACC] bg-clip-text text-transparent">
