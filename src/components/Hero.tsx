@@ -26,7 +26,7 @@ const Hero = () => {
             Download Now
           </button>
         </div>
-        <div className="flex items-end gap-x-6 mt-[148px]">
+        <div className="flex items-end gap-x-6 mt-[148px] max-w-[1264px] mx-auto">
           <img src={phone_2} alt="" />
           <img src={phone_1} alt="" />
           <img src={phone_3} alt="" />

@@ -26,9 +26,10 @@
   --color-custom-gray: #3a3a3a;
   --color-light-purple: #d8c6ff;
   --color-light-purple-2: #e5dbfb;
-  --color-light-purple-3: #EAE7FF;
-  --color-light-purple-4: #F6DDFD;
+  --color-light-purple-3: #eae7ff;
+  --color-light-purple-4: #f6ddfd;
   --color-dark-purple: #563acc;
+  --color-dark-purple-2: #5a5df7;
 }
 
 .grifter {

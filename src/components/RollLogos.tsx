@@ -34,12 +34,12 @@ const logos = [
 ];
 const RollLogos = () => {
   return (
-    <div className="h-[155px] absolute -bottom-38 w-screen left-0 right-0 bg-light-purple-2 pl-22 flex items-center gap-18">
+    <div className="h-[155px] absolute -bottom-38 w-screen left-0 right-0 bg-light-purple-2 pl-22 flex items-center gap-18 ">
       <p className="text-lg font-medium text-custom-gray w-1/3">
         We're have been recognized by Leading Finance Publications and
         Organizations.
       </p>
-      <Marquee>
+      <Marquee speed={50} pauseOnHover>
         {logos.map((logo, idx) => (
           <img
             key={idx}
