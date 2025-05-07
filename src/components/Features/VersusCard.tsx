@@ -1,4 +1,6 @@
 import { cn } from "../../utils";
+import * as motion from "motion/react-client"
+
 
 const VersusCard = ({
   image,
@@ -18,9 +20,16 @@ const VersusCard = ({
         className
       )}
     >
-      <div className="flex justify-center">
+       <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.8 }}
+
+            className="flex justify-center items-center"
+        >
+
         <img src={image} alt="phone" />
-      </div>
+        </motion.div>
+    
       <div>
         <h2 className="grifter text-[32px]">{title}</h2>
         <p className="text-custom-gray">{description}</p>
@@ -30,3 +39,9 @@ const VersusCard = ({
 };
 
 export default VersusCard;
+
+
+
+
+
+

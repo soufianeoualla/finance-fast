@@ -18,7 +18,7 @@ const TestimonialCard = ({
   lastIndex: number;
 }) => {
   const swiper = useSwiper();
-  const [activeIndex, setActiveIndex] = useState(swiper?.activeIndex || 0);
+  const [activeIndex, setActiveIndex] = useState(1);
 
   useEffect(() => {
     if (!swiper) return;
@@ -65,18 +65,22 @@ const TestimonialCard = ({
       </div>
       {activeIndex === index && (
         <>
-          <div
-            onClick={next}
-            className="flex justify-center items-center w-12 h-12 bg-white rounded-full absolute top-1/2 right-4 -translate-y-1/2"
-          >
-            <LuChevronRight className="w-5 h-5 text-black" />
-          </div>
-          <div
-            onClick={prev}
-            className="flex justify-center items-center w-12 h-12 bg-white rounded-full absolute top-1/2 left-4 -translate-y-1/2"
-          >
-            <LuChevronLeft className="w-5 h-5 text-black" />
-          </div>
+          {index !== lastIndex && (
+            <div
+              onClick={next}
+              className="flex justify-center items-center w-12 h-12 bg-white rounded-full absolute top-1/2 right-4 -translate-y-1/2"
+            >
+              <LuChevronRight className="w-5 h-5 text-black" />
+            </div>
+          )}
+          {index !== 0 && (
+            <div
+              onClick={prev}
+              className="flex justify-center items-center w-12 h-12 bg-white rounded-full absolute top-1/2 left-4 -translate-y-1/2"
+            >
+              <LuChevronLeft className="w-5 h-5 text-black" />
+            </div>
+          )}
         </>
       )}
     </div>
