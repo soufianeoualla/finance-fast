@@ -1,4 +1,5 @@
 import phone_1 from "../../assets/feature-phone-1.svg";
+import FeatureHeader from "./FeatureHeader";
 import ItemsList from "./ItemsList";
 import VersusCard from "./VersusCard";
 import VersusSeparator from "./VersusSeparator";
@@ -19,17 +20,12 @@ const featureItems = [
 const VersusOne = () => {
   return (
     <div className="flex flex-col items-center">
-      <span className=" bg-gradient-to-r from-[#6364FF] to-[#563ACC] bg-clip-text text-transparent uppercase text-sm font-bold">
-        Cross-Border Transactions
-      </span>
-      <h1 className="grifter text-[40px] leading-12 mt-4 mb-3 w-2/3 text-center">
-        Say Goodbye to International Payment Hassles
-      </h1>
-      <p className="text-lg text-custom-gray text-center w-2/3">
-        Start your journey to hassle free Cross-Border Payments by downloading
-        the FastFinance app from your iOS of Android store.
-      </p>
-      <div className="mt-22 flex justify-between items-start gap-x-11 ">
+      <FeatureHeader
+        feature="Cross-Border Transactions"
+        title="Say Goodbye to International Payment Hassles"
+        description="Start your journey to hassle free Cross-Border Payments by downloading the FastFinance app from your iOS of Android store."
+      />
+      <div className="xl:mt-22 mt-14 flex xl:flex-row flex-col justify-between items-start gap-x-11 gap-y-6 ">
         <ItemsList featureItems={featureItems} />
         <VersusSeparator />
         <VersusCard

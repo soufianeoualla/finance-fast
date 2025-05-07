@@ -12,24 +12,26 @@ const Hero = () => {
   const [isFocused, setIsFocused] = useState(false);
   return (
     <div className="relative ">
-      <section className=" flex flex-col items-center justify-center mt-[154px]  max-w-[1440px] mx-auto ">
-        <h1 className="grifter text-[48px] leading-[54px] text-center w-2/3">
-          Simplify Your International Transactions with{" "}
-          <span className="grifter bg-gradient-to-r from-[#6364FF] to-[#563ACC] bg-clip-text text-transparent">
-            One Platform
-          </span>
-        </h1>
-        <p className="mt-3 text-lg text-custom-gray text-center w-1/2">
-          Say Goodbye to the Hassles of Traditional Money Transfers. FinanceFast
-          allows you effortlessly transfer money anywhere in the world with
-          confidence and ease.
-        </p>
-        <div className="flex items-center gap-4 border border-[#949494]/50 rounded-4xl pr-2 pl-6 py-1.5 mt-10">
+      <section className=" flex flex-col items-center justify-center xl:mt-[154px] mt-20 max-w-[1440px] mx-auto  ">
+        <div className="px-6 xl:px-0 flex flex-col items-center justify-center ">
+          <h1 className="grifter xl:text-[48px] text-[32px] xl:leading-[54px] leading-10 text-center xl:w-2/3 ">
+            Simplify Your International Transactions with{" "}
+            <span className="grifter bg-gradient-to-r from-[#6364FF] to-[#563ACC] bg-clip-text text-transparent">
+              One Platform
+            </span>
+          </h1>
+          <p className="mt-3 xl:text-lg text-custom-gray text-center xl:w-1/2">
+            Say Goodbye to the Hassles of Traditional Money Transfers.
+            FinanceFast allows you effortlessly transfer money anywhere in the
+            world with confidence and ease.
+          </p>
+        </div>
+        <div className="flex flex-col xl:flex-row xl:justify-between items-center gap-4 xl:border xl:border-[#949494]/50 rounded-4xl pr-2 pl-6 py-1.5 mt-10 w-full xl:w-[498px]">
           <PhoneInput
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
           />
-          <button className="px-6 h-12 rounded-3xl bg-dark-purple text-white font-medium">
+          <button className="px-6 h-12 rounded-3xl bg-dark-purple text-white font-medium w-full xl:w-auto flex items-center justify-center ">
             <AnimatePresence mode="wait">
               {isFocused ? (
                 <motion.span
@@ -56,11 +58,13 @@ const Hero = () => {
             </AnimatePresence>
           </button>
         </div>
-        <div className="flex items-end gap-x-6 mt-[148px] max-w-[1264px] mx-auto">
-          <img src={phone_2} alt="" />
-          <img src={phone_1} alt="" />
-          <img src={phone_3} alt="" />
-          <img src={phone_4} alt="" />
+        <div className="overflow-hidden">
+          <div className="flex items-end xl:gap-x-6 gap-2.5 xl:mt-[148px] mt-[90px] max-w-[1264px] mx-auto -translate-x-12">
+            <img src={phone_2} alt="" className="w-[148px] xl:w-auto" />
+            <img src={phone_1} alt="" className="w-[148px] xl:w-auto" />
+            <img src={phone_3} alt="" className="w-[148px] xl:w-auto" />
+            <img src={phone_4} alt="" className="w-[148px] xl:w-auto" />
+          </div>
         </div>
       </section>
       <RollLogos />

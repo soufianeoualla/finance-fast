@@ -15,7 +15,7 @@ function App() {
       </div>
 
       <Hero />
-      <div className="px-22 max-w-[1440px] mx-auto">
+      <div className="xl:px-22 px-6 max-w-[1440px] mx-auto">
         <Features />
         <BannerCta />
         <Testimonials />

@@ -8,6 +8,7 @@ import won from "../../assets/won.svg";
 import yuan from "../../assets/yuan.svg";
 import dollar_sign from "../../assets/dollar-sign.svg";
 import { cn } from "../../utils";
+import FeatureHeader from "./FeatureHeader";
 
 const currencyList = [
   {
@@ -40,18 +41,12 @@ const currencyList = [
 const VersusTwo = () => {
   return (
     <div className="flex flex-col items-center">
-      <span className=" bg-gradient-to-r from-[#6364FF] to-[#563ACC] bg-clip-text text-transparent uppercase text-sm font-bold">
-        real-time exchange rate
-      </span>
-      <h1 className="grifter text-[40px] leading-12 mt-4 mb-3 w-2/3 text-center">
-        Effortlessly Convert Currency
-      </h1>
-      <p className="text-lg text-custom-gray text-center w-2/3">
-        Convert your currency from Pounds to Naira or Naira to Dollars. Convert
-        Currency Anytime, Anywhere with FinanceFast's Seamless and Efficient
-        Service.
-      </p>
-      <div className="mt-22 flex justify-between items-start w-full ">
+      <FeatureHeader
+        feature="real-time exchange rate"
+        title="Effortlessly Convert Currency"
+        description="Convert your currency from Pounds to Naira or Naira to Dollars. Convert Currency Anytime, Anywhere with FinanceFast's Seamless and Efficient Service."
+      />
+      <div className="xl:mt-22 mt-14 flex xl:flex-row flex-col justify-between items-start gap-x-11 gap-y-6 ">
         <div className="relative">
           <img
             src={dollar}
