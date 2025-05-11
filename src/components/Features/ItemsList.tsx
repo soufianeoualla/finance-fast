@@ -11,7 +11,7 @@ const getOpacity = (index: number) => {
 
 const ItemsList = ({ featureItems }: { featureItems: string[] }) => {
   return (
-    <ul className="space-y-7 flex flex-col items-start">
+    <ul className="space-y-7 flex flex-col items-start  w-full xl:w-auto ">
       {featureItems.map((item, index) => (
         <li
           className={cn(

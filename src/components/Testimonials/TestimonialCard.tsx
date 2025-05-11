@@ -45,21 +45,21 @@ const TestimonialCard = ({
   };
 
   return (
-    <div className="w-[834px] h-[449px] bg-[#E5DBFB]/70 border border-[#949494]/50 rounded-3xl flex flex-col justify-between items-center relative">
-      <div className="flex justify-center items-center h-[321px] px-[96px]">
-        <p className="text-center text-2xl text-custom-gray font-medium leading-9">
+    <div className="xl:w-[834px] w-full h-[449px] bg-[#E5DBFB]/70 border border-[#949494]/50 rounded-3xl flex flex-col justify-between items-center relative">
+      <div className="flex justify-center items-center h-[321px] xl:px-[96px] px-10">
+        <p className="text-center text-sm xl:text-2xl text-custom-gray font-medium xl:leading-9">
           {testimonial}
         </p>
       </div>
-      <div className="h-[128px] border-t border-t-[#949494]/50 flex items-center gap-x-3 justify-center bg-[#E5DBFB] w-full rounded-b-3xl">
+      <div className="xl:h-[128px] h-[103px] border-t border-t-[#949494]/50 flex items-center gap-x-3 justify-center bg-[#E5DBFB] w-full rounded-b-3xl">
         <img
           src={user.image}
           alt=""
-          className="w-16 h-16 rounded-full object-cover"
+          className="xl:w-16 w-14 xl:h-16 h-14 rounded-full object-cover"
         />
 
         <div className="flex flex-col items-start justify-center">
-          <b className="grifter text-xl text">{user.name}</b>
+          <b className="grifter xl:text-xl text-lg">{user.name}</b>
           <span className="text-sm text-custom-gray">{user.company}</span>
         </div>
       </div>
@@ -68,17 +68,17 @@ const TestimonialCard = ({
           {index !== lastIndex && (
             <div
               onClick={next}
-              className="flex justify-center items-center w-12 h-12 bg-white rounded-full absolute top-1/2 right-4 -translate-y-1/2"
+              className="flex justify-center items-center xl:w-12 w-8 h-8 xl:h-12 bg-white rounded-full absolute top-1/2 right-4 -translate-y-1/2"
             >
-              <LuChevronRight className="w-5 h-5 text-black" />
+              <LuChevronRight className="xl:w-5 w-4 h-4 xl:h-5 text-black" />
             </div>
           )}
           {index !== 0 && (
             <div
               onClick={prev}
-              className="flex justify-center items-center w-12 h-12 bg-white rounded-full absolute top-1/2 left-4 -translate-y-1/2"
+              className="flex justify-center items-center xl:w-12 w-8 h-8 xl:h-12 bg-white rounded-full absolute top-1/2 left-4 -translate-y-1/2"
             >
-              <LuChevronLeft className="w-5 h-5 text-black" />
+              <LuChevronLeft className="xl:w-5 w-4 h-4 xl:h-5 text-black" />
             </div>
           )}
         </>

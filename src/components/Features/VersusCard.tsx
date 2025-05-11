@@ -16,7 +16,7 @@ const VersusCard = ({
   return (
     <div
       className={cn(
-        "bg-light-purple-3/70 rounded-2xl p-8 pt-12 space-y-10 max-w-[618px] ",
+        "bg-light-purple-3/70 rounded-2xl p-8 pt-12 space-y-10 max-w-[618px] w-full ",
         className
       )}
     >

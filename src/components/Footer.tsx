@@ -11,43 +11,45 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <footer className="w-full bg-[#F9F9F9] py-18">
-      <div className="max-w-[1440px] mx-auto px-22">
+      <div className="max-w-[1440px] mx-auto xl:px-22 px-6">
         <div className="flex flex-col md:flex-row gap-y-8 md:gap-0 md:justify-between ">
           <div className="space-y-4">
-            <h2 className="text-xl grifter">Company</h2>
-            <ul className="space-y-4 text-custom-gray">
+            <h2 className="xl:text-xl text-lg grifter">Company</h2>
+            <ul className="space-y-4 text-custom-gray text-sm xl:text-base">
               <li>About</li>
               <li>Contact</li> <li>Blog</li>
             </ul>
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-xl grifter">Product</h2>
-            <ul className="space-y-4 text-custom-gray">
+            <h2 className="xl:text-xl text-lg grifter">Product</h2>
+            <ul className="space-y-4 text-custom-gray text-sm xl:text-base">
               <li>Money conversion</li>
               <li>International transactions</li>{" "}
               <li>International transactions</li>
             </ul>
           </div>
           <div className="space-y-4">
-            <h2 className="text-xl grifter">Legal</h2>
-            <ul className="space-y-4 text-custom-gray">
+            <h2 className="xl:text-xl text-lg grifter">Legal</h2>
+            <ul className="space-y-4 text-custom-gray text-sm xl:text-base">
               <li>Terms & conditions</li>
               <li>privacy policy</li>
             </ul>
           </div>
           <div className="space-y-4">
-            <h2 className="text-xl grifter ">Sign up for our newsletter</h2>
+            <h2 className="xl:text-xl text-lg grifter ">
+              Sign up for our newsletter
+            </h2>
 
-            <div className="w-[498px] h-[50px] flex gap-x-2 rounded-3xl bg-white p-[5px] border border-[#949494]/50">
+            <div className="xl:w-[498px] w-full h-[50px] flex gap-x-2 rounded-3xl bg-white p-[5px] border border-[#949494]/50">
               <input
                 type="text"
                 placeholder="Enter email"
-                className="w-full h-full px-4 outline-none placeholder:text-custom-gray "
+                className="w-full h-full text-sm xl:text-base px-4 outline-none placeholder:text-custom-gray "
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => setIsFocused(false)}
               />
-              <button className="bg-dark-purple text-white rounded-3xl h-full px-6 hover:bg-dark-purple-2 cursor-pointer hover:scale-[102%] transition-transform">
+              <button className="bg-dark-purple text-white text-sm xl:text-base rounded-3xl h-full px-6 hover:bg-dark-purple-2 cursor-pointer hover:scale-[102%] transition-transform">
                 <AnimatePresence mode="wait">
                   {isFocused ? (
                     <motion.span
@@ -76,7 +78,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-between items-center w-full mt-14">
+        <div className="flex flex-col xl:flex-row xl:justify-between xl:items-center items-start gap-y-6  w-full mt-10 xl:mt-14">
           <div className="flex gap-x-4 items-center">
             <div className="w-10 h-10 flex justify-center items-center bg-white rounded-full">
               <img src={instagram} alt="" />

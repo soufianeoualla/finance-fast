@@ -49,39 +49,39 @@ const CardItem = ({
 
 const BannerCta = () => {
   return (
-    <div className="bg-dark-purple-2 rounded-3xl flex items-center pl-13.5 mt-33 h-[432px] mb-31">
-      <div className="flex flex-col items-start gap-y-6 w-[60%]">
-        <h1 className="grifter text-[40px] leading-12 text-white ">
+    <div className="bg-dark-purple-2 rounded-3xl flex xl:flex-row flex-col xl:items-center xl:pl-13.5 px-4 mt-33 xl:h-[432px] h-[583px] mb-14  xl:mb-31 overflow-hidden">
+      <div className="flex flex-col items-start gap-y-6 xl:w-[60%] pt-14 xl:pt-0">
+        <h1 className="grifter text-2xl xl:text-[40px] xl:leading-12 leading-7 text-white text-center xl:text-left ">
           Make International Payments a Breeze with FinanceFast
         </h1>
-        <ul className="flex items-center gap-x-13.5">
-          <li className="flex items-center gap-x-3 text-[#EDEDED] text-xl font-medium">
+        <ul className="flex flex-col xl:flex-row xl:items-center xl:gap-x-13.5 gap-y-4">
+          <li className="flex items-center gap-x-3 text-[#EDEDED] text-sm xl:text-xl font-medium">
             {" "}
             <HiOutlineCheck />
             No hidden fees
           </li>
-          <li className="flex items-center gap-x-3 text-[#EDEDED] text-xl font-medium">
+          <li className="flex items-center gap-x-3 text-[#EDEDED] text-sm xl:text-xl font-medium">
             {" "}
             <HiOutlineCheck />
             Secure transactions
           </li>
-          <li className="flex items-center gap-x-3 text-[#EDEDED] text-xl font-medium">
+          <li className="flex items-center gap-x-3 text-[#EDEDED] text-sm xl:text-xl font-medium">
             {" "}
             <HiOutlineCheck />
             Fast transfers
           </li>
         </ul>
       </div>
-      <div className="flex flex-col items-start gap-y-6 relative w-[40%] ">
+      <div className="flex flex-col items-start gap-y-6 relative xl:w-[40%] ">
         <img
           src={lines}
           alt="Lines"
-          className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-[1294.81px] h-[500px]"
+          className="absolute xl:-translate-x-1/2 -translate-x-[45%] xl:-translate-y-1/2 -translate-y-3/5 top-1/2 left-1/2 w-[1294.81px] h-[500px]"
         />
         <img
           src={flash_icon}
           alt="Flash Icon"
-          className="absolute -translate-y-0 right-10 w-[110px] h-[92.54px]"
+          className="absolute -top-10 -right-8 z-20 xl:-translate-y-0 xl:-right-10 w-[110px] h-[92.54px] rotate-12 "
         />
 
         <CardItem
@@ -97,13 +97,13 @@ const BannerCta = () => {
           image={transaction_2}
           amount="$500.00"
           debit={true}
-          className="translate-x-22 translate-y-4 -rotate-2"
+          className="xl:translate-x-22 translate-x-7 translate-y-4 -rotate-2 w-[300px]"
         />
         <CardItem
           title={"$30 converted"}
           details="30 US Dollars - 50CAD"
           image={transaction_3}
-          className="translate-x-14 translate-y-4"
+          className="xl:translate-x-14 translate-y-4"
         />
       </div>
     </div>

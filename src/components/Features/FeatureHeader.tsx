@@ -8,7 +8,7 @@ const FeatureHeader = ({
   description: string;
 }) => {
   return (
-    <>
+    <div className="flex flex-col items-center">
       <span className="bg-gradient-to-r from-[#6364FF] to-[#563ACC] bg-clip-text text-transparent uppercase xl:text-sm text-[10px] font-bold">
         {feature}
       </span>
@@ -18,7 +18,7 @@ const FeatureHeader = ({
       <p className="text-lg text-custom-gray text-center xl:w-2/3 w-full">
         {description}
       </p>
-    </>
+    </div>
   );
 };
 

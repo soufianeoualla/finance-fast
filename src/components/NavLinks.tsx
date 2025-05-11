@@ -1,4 +1,5 @@
 import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
+import CustomListItem from "./ui/CustomListItem";
 const links = [
   {
     title: "Blog",
@@ -18,9 +19,7 @@ const NavLinks = () => {
     <nav>
       <ul className="flex items-center gap-x-12 text-custom-gray">
         {links.map((link) => (
-          <li key={link.title}>
-            <a href={link.url}>{link.title}</a>
-          </li>
+          <CustomListItem key={link.title} label={link.title} />
         ))}
         <li className="bg-light-purple h-12 flex items-center gap-x-1 rounded-3xl px-6 text-black text-lg font-medium">
           <HiOutlineDevicePhoneMobile className="text-2xl" />

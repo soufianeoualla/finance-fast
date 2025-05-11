@@ -64,7 +64,7 @@ const VersusTwo = () => {
           />
         </div>
         <VersusSeparator />
-        <ul className="flex flex-col items-start gap-y-15 w-[388px]">
+        <ul className="flex flex-col items-start gap-y-15  w-full xl:w-auto">
           {currencyList.map((currency, index) => (
             <li key={index} className="flex items-center gap-x-6">
               <div

@@ -5,11 +5,25 @@ import phone_3 from "../assets/iPhone 13 Pro-2.svg";
 import phone_4 from "../assets/iPhone 13 Pro-3.svg";
 import RollLogos from "./RollLogos";
 import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
 import { LuDownload } from "react-icons/lu";
 
 const Hero = () => {
   const [isFocused, setIsFocused] = useState(false);
+
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(true);
+      window.removeEventListener("scroll", handleScroll);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="relative ">
       <section className=" flex flex-col items-center justify-center xl:mt-[154px] mt-20 max-w-[1440px] mx-auto  ">
@@ -58,16 +72,38 @@ const Hero = () => {
             </AnimatePresence>
           </button>
         </div>
-        <div className="overflow-hidden">
-          <div className="flex items-end xl:gap-x-6 gap-2.5 xl:mt-[148px] mt-[90px] max-w-[1264px] mx-auto -translate-x-12">
-            <img src={phone_2} alt="" className="w-[148px] xl:w-auto" />
-            <img src={phone_1} alt="" className="w-[148px] xl:w-auto" />
-            <img src={phone_3} alt="" className="w-[148px] xl:w-auto" />
-            <img src={phone_4} alt="" className="w-[148px] xl:w-auto" />
+        <motion.div
+          initial={{ y: -1000, opacity: 0 }}
+          animate={hasScrolled ? { y: 0, opacity: 1 } : {}}
+          transition={{
+            type: "spring",
+            stiffness: 40,
+            damping: 8,
+            mass: 1.5,
+          }}
+        >
+          <div className="overflow-hidden">
+            <div className="flex items-end xl:gap-x-6 gap-2.5 xl:mt-[148px] mt-[90px] max-w-[1264px] mx-auto -translate-x-26 xl:-translate-x-0">
+              <img src={phone_2} alt="" className="w-[148px] translate-y-10 xl:translate-y-0 xl:w-auto" />
+              <img src={phone_1} alt="" className="w-[148px] xl:w-auto" />
+              <img src={phone_3} alt="" className="w-[148px]  translate-y-10 xl:translate-y-0 xl:w-auto" />
+              <img src={phone_4} alt="" className="w-[148px]  translate-y-10 xl:translate-y-0 xl:w-auto" />
+            </div>
           </div>
-        </div>
+        </motion.div>
       </section>
-      <RollLogos />
+      <motion.div
+        initial={{ x: 500, opacity: 0 }}
+        animate={hasScrolled ? { x: 0, opacity: 1 } : {}}
+        transition={{
+          type: "spring",
+          stiffness: 40,
+          damping: 8,
+          mass: 1.5,
+        }}
+      >
+        <RollLogos />
+      </motion.div>
     </div>
   );
 };

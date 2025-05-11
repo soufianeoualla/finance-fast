@@ -26,8 +26,7 @@ const VersusThree = () => {
         description="Simplify Your Money Management with Receive & Request Payments"
       />
 
-<div className="xl:mt-22 mt-14 flex xl:flex-row flex-col justify-between items-start gap-x-11 gap-y-6 ">
-
+      <div className="xl:mt-22 mt-14 flex xl:flex-row flex-col justify-between items-start gap-x-11 gap-y-6 ">
         <ItemsList featureItems={featureItems} />
         <VersusSeparator />
         <VersusCard

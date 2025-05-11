@@ -2,10 +2,11 @@ import BannerCta from "./components/BannerCta";
 import FAQ from "./components/FAQ";
 import Features from "./components/Features/Features";
 import Footer from "./components/Footer";
+import FooterBanner from "./components/FooterBanner";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Testimonials from "./components/Testimonials/Testimonials";
-import FooterBanner from "./components/ui/FooterBanner";
+
 
 function App() {
   return (

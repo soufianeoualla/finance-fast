@@ -19,12 +19,12 @@ const FAQItem = ({
     <div
       onClick={handleExpand}
       className={cn(
-        "py-8 flex flex-col items-start cursor-pointer w-full",
+        "xl:py-8 py-6 flex flex-col items-start cursor-pointer w-full",
         index !== 3 && "border-b border-b-[#949494]/50"
       )}
     >
       <div className="flex justify-between items-center w-full">
-        <h2 className="text-xl grifter">{question}</h2>
+        <h2 className="xl:text-xl text-lg grifter">{question}</h2>
         <LuChevronDown
           className={cn(
             "text-custom-gray transition-transform duration-300 w-6 h-6",
@@ -32,7 +32,7 @@ const FAQItem = ({
           )}
         />
       </div>
-      {isExpanded && <p className="text-custom-gray mt-4">{answer}</p>}
+      {isExpanded && <p className="text-custom-gray text-sm xl:text-base xl:mt-4 mt-3">{answer}</p>}
     </div>
   );
 };
@@ -63,17 +63,17 @@ const faqs = [
 const FAQ = () => {
   const [isExpanded, setIsExpanded] = useState<number | null>();
   return (
-    <section className=" w-[719px] flex flex-col justify-center items-center mb-28 mx-auto">
+    <section className=" xl:w-[719px] w-full flex flex-col justify-center items-center mb-28 mx-auto">
       <span className=" bg-gradient-to-r from-[#6364FF] to-[#563ACC] bg-clip-text text-transparent uppercase text-sm font-bold">
         FAQ’S
       </span>
-      <h1 className="grifter text-[40px] leading-12 mt-4 mb-3 w-2/3 text-center">
+      <h1 className="grifter xl:text-[40px] text-xl leading-7 xl:leading-12 mt-4 mb-3 w-2/3 text-center">
         Got questions?
       </h1>
-      <p className="text-custom-gray">
+      <p className="text-custom-gray text-sm xl:text-base">
         Get the answers to your questions about FastFinance.
       </p>
-      <div className="flex flex-col items-start w-full mt-22">
+      <div className="flex flex-col items-start w-full xl:mt-22 mt-14">
         {faqs.map((faq, index) => (
           <FAQItem
             key={index}
