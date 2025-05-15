@@ -17,7 +17,7 @@ const links = [
 const NavLinks = () => {
   return (
     <nav>
-      <ul className="flex items-center gap-x-12 text-custom-gray">
+      <ul className="flex flex-col xl:flex-row xl:items-center items-start gap-y-6 gap-x-12 text-custom-gray">
         {links.map((link) => (
           <CustomListItem key={link.title} label={link.title} />
         ))}

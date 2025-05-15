@@ -9,6 +9,7 @@ import yuan from "../../assets/yuan.svg";
 import dollar_sign from "../../assets/dollar-sign.svg";
 import { cn } from "../../utils";
 import FeatureHeader from "./FeatureHeader";
+import { motion } from "motion/react";
 
 const currencyList = [
   {
@@ -64,7 +65,18 @@ const VersusTwo = () => {
           />
         </div>
         <VersusSeparator />
-        <ul className="flex flex-col items-start gap-y-15  w-full xl:w-auto">
+        <motion.ul
+          initial={{ x: 300, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 40,
+            damping: 8,
+            mass: 1.5,
+          }}
+          viewport={{ once: true }}
+          className="flex flex-col items-start gap-y-15  w-full xl:w-auto"
+        >
           {currencyList.map((currency, index) => (
             <li key={index} className="flex items-center gap-x-6">
               <div
@@ -90,7 +102,7 @@ const VersusTwo = () => {
               </div>
             </li>
           ))}
-        </ul>
+        </motion.ul>
       </div>
     </div>
   );

@@ -302,7 +302,12 @@ interface PhoneInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 
 export function PhoneInput({ onValueChange, ...props }: PhoneInputProps) {
   const [open, setOpen] = React.useState(false);
-  const [selectedCountry, setSelectedCountry] = React.useState(countries[0]);
+  const [selectedCountry, setSelectedCountry] = React.useState({
+    code: "MA",
+    name: "Morocco",
+    flag: "🇲🇦",
+    dialCode: "+212",
+  });
   const [phoneNumber, setPhoneNumber] = React.useState("");
 
   // Format phone number based on country

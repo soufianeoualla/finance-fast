@@ -1,8 +1,10 @@
 import TestimonialCard from "./TestimonialCard";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { motion } from "motion/react";
 
 // Import Swiper styles
+//@ts-expect-error importing css file
 import "swiper/css";
 
 const testimonials = [
@@ -42,7 +44,18 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="flex flex-col justify-center items-center xl:mb-28 mb-18">
+    <motion.section
+    initial={{ opacity: 0, y: 100 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{
+      type: "spring",
+      stiffness: 40,
+      damping: 8,
+      mass: 1.5,
+      duration: 0.5,
+    }}
+    className="flex flex-col justify-center items-center xl:mb-28 mb-18">
       <span className=" bg-gradient-to-r from-[#6364FF] to-[#563ACC] bg-clip-text text-transparent uppercase text-sm font-bold">
         Testimonials
       </span>
@@ -79,7 +92,7 @@ const Testimonials = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </section>
+    </motion.section>
   );
 };
 

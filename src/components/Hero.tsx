@@ -11,7 +11,6 @@ import { LuDownload } from "react-icons/lu";
 
 const Hero = () => {
   const [isFocused, setIsFocused] = useState(false);
-
   const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
@@ -25,9 +24,20 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative ">
+    <div className="relative  ">
       <section className=" flex flex-col items-center justify-center xl:mt-[154px] mt-20 max-w-[1440px] mx-auto  ">
-        <div className="px-6 xl:px-0 flex flex-col items-center justify-center ">
+        <motion.div
+          initial={{ y: -50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{
+            type: "spring",
+            stiffness: 40,
+            damping: 8,
+            mass: 1.5,
+          }}
+          className="px-6 xl:px-0 flex flex-col items-center justify-center "
+        >
           <h1 className="grifter xl:text-[48px] text-[32px] xl:leading-[54px] leading-10 text-center xl:w-2/3 ">
             Simplify Your International Transactions with{" "}
             <span className="grifter bg-gradient-to-r from-[#6364FF] to-[#563ACC] bg-clip-text text-transparent">
@@ -39,13 +49,27 @@ const Hero = () => {
             FinanceFast allows you effortlessly transfer money anywhere in the
             world with confidence and ease.
           </p>
-        </div>
-        <div className="flex flex-col xl:flex-row xl:justify-between items-center gap-4 xl:border xl:border-[#949494]/50 rounded-4xl pr-2 pl-6 py-1.5 mt-10 w-full xl:w-[498px]">
+        </motion.div>
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{
+            type: "spring",
+            stiffness: 40,
+            damping: 8,
+            mass: 1.5,
+          }}
+          className="flex overflow-hidden flex-col xl:flex-row xl:justify-between items-center gap-4 xl:border xl:border-[#949494]/50 rounded-4xl pr-2 pl-6 py-1.5 mt-10 w-full xl:w-[498px]"
+        >
           <PhoneInput
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
           />
-          <button className="px-6 h-12 rounded-3xl bg-dark-purple text-white font-medium w-full xl:w-auto flex items-center justify-center ">
+          <button
+            className="px-6 h-12 rounded-3xl bg-dark-purple text-white font-medium w-full xl:w-[173px] flex items-center justify-center hover:bg-gradient-to-b  from-[#5a5df7] to-[#563acc]
+hover:scale-102 transition-transform "
+          >
             <AnimatePresence mode="wait">
               {isFocused ? (
                 <motion.span
@@ -71,7 +95,7 @@ const Hero = () => {
               )}
             </AnimatePresence>
           </button>
-        </div>
+        </motion.div>
         <motion.div
           initial={{ y: -1000, opacity: 0 }}
           animate={hasScrolled ? { y: 0, opacity: 1 } : {}}
@@ -84,10 +108,22 @@ const Hero = () => {
         >
           <div className="overflow-hidden">
             <div className="flex items-end xl:gap-x-6 gap-2.5 xl:mt-[148px] mt-[90px] max-w-[1264px] mx-auto -translate-x-26 xl:-translate-x-0">
-              <img src={phone_2} alt="" className="w-[148px] translate-y-10 xl:translate-y-0 xl:w-auto" />
+              <img
+                src={phone_2}
+                alt=""
+                className="w-[148px] translate-y-10 xl:translate-y-0 xl:w-auto"
+              />
               <img src={phone_1} alt="" className="w-[148px] xl:w-auto" />
-              <img src={phone_3} alt="" className="w-[148px]  translate-y-10 xl:translate-y-0 xl:w-auto" />
-              <img src={phone_4} alt="" className="w-[148px]  translate-y-10 xl:translate-y-0 xl:w-auto" />
+              <img
+                src={phone_3}
+                alt=""
+                className="w-[148px]  translate-y-10 xl:translate-y-0 xl:w-auto"
+              />
+              <img
+                src={phone_4}
+                alt=""
+                className="w-[148px]  translate-y-10 xl:translate-y-0 xl:w-auto"
+              />
             </div>
           </div>
         </motion.div>
@@ -100,6 +136,7 @@ const Hero = () => {
           stiffness: 40,
           damping: 8,
           mass: 1.5,
+          duration: 0.5,
         }}
       >
         <RollLogos />

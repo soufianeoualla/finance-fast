@@ -35,7 +35,7 @@ const logos = [
 const RollLogos = () => {
   return (
     <div
-      className="h-[155px] absolute -bottom-38 w-screen left-0 right-0 bg-light-purple-2 xl:pl-22 xl:py-0 py-6 flex xl:flex-row flex-col items-start xl:items-center gap-4
+      className="h-[155px] absolute -bottom-38  left-0 right-0 bg-light-purple-2 xl:pl-22 xl:py-0 py-6 flex xl:flex-row flex-col items-start xl:items-center gap-4
      xl:gap-18 "
     >
       <p className="xl:text-lg text-xs font-medium text-custom-gray xl:w-1/3 w-2/3 pl-6 xl:pl-0">

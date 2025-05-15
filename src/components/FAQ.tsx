@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { LuChevronDown } from "react-icons/lu";
 import { cn } from "../utils";
+import { motion } from "motion/react";
 
 const FAQItem = ({
   question,
@@ -32,7 +33,22 @@ const FAQItem = ({
           )}
         />
       </div>
-      {isExpanded && <p className="text-custom-gray text-sm xl:text-base xl:mt-4 mt-3">{answer}</p>}
+      <motion.div
+      initial={{ opacity: 0, height: 0 }}
+      animate={{
+        opacity: isExpanded ? 1 : 0,
+        height: isExpanded ? "auto" : 0,
+      }}
+      exit={{ opacity: 0, height: 0 }}
+      transition={{ duration: 0.3 }}
+      
+      >
+        {isExpanded && (
+          <p className="text-custom-gray text-sm xl:text-base xl:mt-4 mt-3">
+            {answer}
+          </p>
+        )}
+      </motion.div>
     </div>
   );
 };

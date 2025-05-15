@@ -1,6 +1,6 @@
-
 import { LuX } from "react-icons/lu";
 import { cn } from "../../utils";
+import { motion } from "motion/react";
 
 const activeIndex = 4;
 const getOpacity = (index: number) => {
@@ -11,7 +11,18 @@ const getOpacity = (index: number) => {
 
 const ItemsList = ({ featureItems }: { featureItems: string[] }) => {
   return (
-    <ul className="space-y-7 flex flex-col items-start  w-full xl:w-auto ">
+    <motion.ul
+      initial={{ x: 300, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      transition={{
+        type: "spring",
+        stiffness: 40,
+        damping: 8,
+        mass: 1.5,
+      }}
+      viewport={{ once: true }}
+      className="space-y-7 flex flex-col items-start  w-full xl:w-auto "
+    >
       {featureItems.map((item, index) => (
         <li
           className={cn(
@@ -29,7 +40,7 @@ const ItemsList = ({ featureItems }: { featureItems: string[] }) => {
           {item}
         </li>
       ))}
-    </ul>
+    </motion.ul>
   );
 };
 

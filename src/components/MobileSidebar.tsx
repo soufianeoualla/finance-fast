@@ -1,11 +1,13 @@
-
 import NavLinks from "./NavLinks";
 import { LuX } from "react-icons/lu";
 
-const MobileSidebar = () => {
+const MobileSidebar = ({ hideSidebar }: { hideSidebar: () => void }) => {
   return (
-    <div className="fixed top-0 left-0 w-full h-full bg-white shadow-lg z-50 ">
-      <LuX className="absolute top-4 right-4 text-2xl cursor-pointer" />
+    <div className="fixed inset-0 w-screen h-full bg-white shadow-lg z-50 p-6 ">
+      <LuX
+        className="absolute top-4 right-4 text-2xl cursor-pointer"
+        onClick={hideSidebar}
+      />
       <NavLinks />
     </div>
   );

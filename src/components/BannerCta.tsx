@@ -5,6 +5,7 @@ import lines from "../assets/lines.svg";
 import transaction_1 from "../assets/transaction-1.svg";
 import transaction_2 from "../assets/transaction-2.svg";
 import transaction_3 from "../assets/transaction-3.svg";
+import { motion } from "motion/react";
 
 const CardItem = ({
   title,
@@ -49,7 +50,17 @@ const CardItem = ({
 
 const BannerCta = () => {
   return (
-    <div className="bg-dark-purple-2 rounded-3xl flex xl:flex-row flex-col xl:items-center xl:pl-13.5 px-4 mt-33 xl:h-[432px] h-[583px] mb-14  xl:mb-31 overflow-hidden">
+    <motion.div
+    initial={{ y: 100, opacity: 0 }}
+    whileInView={{ y: 0, opacity: 1 }}
+    viewport={{ once: true }}
+    transition={{
+      type: "spring",
+      stiffness: 40,
+      damping: 8,
+      mass: 1.5,
+      duration: 0.5,
+    }} className="bg-dark-purple-2 rounded-3xl flex xl:flex-row flex-col xl:items-center xl:pl-13.5 px-4 mt-33 xl:h-[432px] h-[583px] mb-14  xl:mb-31 overflow-hidden">
       <div className="flex flex-col items-start gap-y-6 xl:w-[60%] pt-14 xl:pt-0">
         <h1 className="grifter text-2xl xl:text-[40px] xl:leading-12 leading-7 text-white text-center xl:text-left ">
           Make International Payments a Breeze with FinanceFast
@@ -106,7 +117,7 @@ const BannerCta = () => {
           className="xl:translate-x-14 translate-y-4"
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

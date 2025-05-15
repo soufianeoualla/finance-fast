@@ -9,6 +9,7 @@ import twitter from "../assets/twitter.svg";
 const Footer = () => {
   const [isFocused, setIsFocused] = useState(false);
   const currentYear = new Date().getFullYear();
+
   return (
     <footer className="w-full bg-[#F9F9F9] py-18">
       <div className="max-w-[1440px] mx-auto xl:px-22 px-6">
@@ -49,7 +50,7 @@ const Footer = () => {
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => setIsFocused(false)}
               />
-              <button className="bg-dark-purple text-white text-sm xl:text-base rounded-3xl h-full px-6 hover:bg-dark-purple-2 cursor-pointer hover:scale-[102%] transition-transform">
+              <button className="bg-dark-purple w-[140px] flex justify-center items-center text-white text-sm xl:text-base rounded-3xl h-full hover:bg-gradient-to-b  from-[#5a5df7] to-[#563acc] cursor-pointer hover:scale-[102%] transition-transform">
                 <AnimatePresence mode="wait">
                   {isFocused ? (
                     <motion.span
