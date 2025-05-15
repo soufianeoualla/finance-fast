@@ -10,6 +10,7 @@ import dollar_sign from "../../assets/dollar-sign.svg";
 import { cn } from "../../utils";
 import FeatureHeader from "./FeatureHeader";
 import { motion } from "motion/react";
+import useWindowWidth from "../../hooks/useWindowWidth";
 
 const currencyList = [
   {
@@ -40,6 +41,13 @@ const currencyList = [
 ];
 
 const VersusTwo = () => {
+  const { isMobile } = useWindowWidth();
+
+  const animation = {
+    initial: isMobile ? { opacity: 0, y: 50 } : { opacity: 0, x: 300 },
+    whileInView: isMobile ? { opacity: 1, y: 0 } : { opacity: 1, x: 0 },
+  };
+
   return (
     <div className="flex flex-col items-center">
       <FeatureHeader
@@ -66,8 +74,8 @@ const VersusTwo = () => {
         </div>
         <VersusSeparator />
         <motion.ul
-          initial={{ x: 300, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
+          initial={animation.initial}
+          whileInView={animation.whileInView}
           transition={{
             type: "spring",
             stiffness: 40,

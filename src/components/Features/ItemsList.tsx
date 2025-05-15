@@ -1,6 +1,7 @@
 import { LuX } from "react-icons/lu";
 import { cn } from "../../utils";
 import { motion } from "motion/react";
+import useWindowWidth from "../../hooks/useWindowWidth";
 
 const activeIndex = 4;
 const getOpacity = (index: number) => {
@@ -10,10 +11,17 @@ const getOpacity = (index: number) => {
 };
 
 const ItemsList = ({ featureItems }: { featureItems: string[] }) => {
+  const { isMobile } = useWindowWidth();
+
+  const animation = {
+    initial: isMobile ? { opacity: 0, y: 50 } : { opacity: 0, x: 300 },
+    whileInView: isMobile ? { opacity: 1, y: 0 } : { opacity: 1, x: 0 },
+  };
+
   return (
     <motion.ul
-      initial={{ x: 300, opacity: 0 }}
-      whileInView={{ x: 0, opacity: 1 }}
+      initial={animation.initial}
+      whileInView={animation.whileInView}
       transition={{
         type: "spring",
         stiffness: 40,
