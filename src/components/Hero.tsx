@@ -128,9 +128,10 @@ hover:scale-102 transition-transform "
           </div>
         </motion.div>
       </section>
+
       <motion.div
-        initial={{ x: 500, opacity: 0 }}
-        animate={hasScrolled ? { x: 0, opacity: 1 } : {}}
+        initial={{ y: 200, opacity: 0 }}
+        animate={hasScrolled ? { y: 0, opacity: 1 } : {}}
         transition={{
           type: "spring",
           stiffness: 40,
