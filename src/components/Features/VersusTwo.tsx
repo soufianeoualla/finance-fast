@@ -77,10 +77,7 @@ const VersusTwo = () => {
           initial={animation.initial}
           whileInView={animation.whileInView}
           transition={{
-            type: "spring",
-            stiffness: 40,
-            damping: 8,
-            mass: 1.5,
+            duration: 0.5,
           }}
           viewport={{ once: true }}
           className="flex flex-col items-start gap-y-15  w-full xl:w-auto"

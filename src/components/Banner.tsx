@@ -25,7 +25,7 @@ const CardItem = ({
   return (
     <div
       className={cn(
-        "flex justify-between items-center px-3 rounded-lg bg-white w-[327px] h-[70px]",
+        "flex justify-between items-center px-3 rounded-lg bg-white xl:w-[327px]  w-[95%] h-[70px]",
         className
       )}
     >
@@ -48,19 +48,21 @@ const CardItem = ({
   );
 };
 
-const BannerCta = () => {
+const Banner = () => {
   return (
     <motion.div
-    initial={{ y: 100, opacity: 0 }}
-    whileInView={{ y: 0, opacity: 1 }}
-    viewport={{ once: true }}
-    transition={{
-      type: "spring",
-      stiffness: 40,
-      damping: 8,
-      mass: 1.5,
-      duration: 0.5,
-    }} className="bg-dark-purple-2 rounded-3xl flex xl:flex-row flex-col xl:items-center xl:pl-13.5 px-4 mt-33 xl:h-[432px] h-[583px] mb-14  xl:mb-31 overflow-hidden">
+      initial={{ y: 100, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{
+        type: "spring",
+        stiffness: 40,
+        damping: 8,
+        mass: 1.5,
+        duration: 0.5,
+      }}
+      className="bg-dark-purple-2 rounded-3xl flex xl:flex-row flex-col xl:items-center xl:pl-13.5 px-4 mt-33 xl:h-[432px] h-[583px] mb-14  xl:mb-31 overflow-hidden"
+    >
       <div className="flex flex-col items-start gap-y-6 xl:w-[60%] pt-14 xl:pt-0">
         <h1 className="grifter text-2xl xl:text-[40px] xl:leading-12 leading-7 text-white text-center xl:text-left ">
           Make International Payments a Breeze with FinanceFast
@@ -108,7 +110,7 @@ const BannerCta = () => {
           image={transaction_2}
           amount="$500.00"
           debit={true}
-          className="xl:translate-x-22 translate-x-7 translate-y-4 -rotate-2 w-[300px]"
+          className="xl:translate-x-22 translate-x-7 translate-y-4 -rotate-2 xl:w-[300px] w-[90%] "
         />
         <CardItem
           title={"$30 converted"}
@@ -121,4 +123,4 @@ const BannerCta = () => {
   );
 };
 
-export default BannerCta;
+export default Banner;

@@ -23,10 +23,7 @@ const ItemsList = ({ featureItems }: { featureItems: string[] }) => {
       initial={animation.initial}
       whileInView={animation.whileInView}
       transition={{
-        type: "spring",
-        stiffness: 40,
-        damping: 8,
-        mass: 1.5,
+        duration: 0.5,
       }}
       viewport={{ once: true }}
       className="space-y-7 flex flex-col items-start  w-full xl:w-auto "

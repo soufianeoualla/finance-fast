@@ -60,14 +60,14 @@ const Hero = () => {
             damping: 8,
             mass: 1.5,
           }}
-          className="flex overflow-hidden flex-col xl:flex-row xl:justify-between items-center gap-4 xl:border xl:border-[#949494]/50 rounded-4xl pr-2 pl-6 py-1.5 mt-10 w-full xl:w-[498px]"
+          className="flex overflow-hidden justify-center flex-col xl:flex-row xl:justify-between items-center gap-4 xl:border xl:border-[#949494]/50 rounded-4xl xl:pr-2 xl:pl-6 px-4 py-1.5 mt-10 w-full xl:w-[498px]"
         >
           <PhoneInput
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
           />
           <button
-            className="px-6 h-12 rounded-3xl bg-dark-purple text-white font-medium w-full xl:w-[173px] flex items-center justify-center hover:bg-gradient-to-b  from-[#5a5df7] to-[#563acc]
+            className="px-6 h-12 rounded-3xl bg-dark-purple text-white font-medium w-full xl:w-[173px] flex items-center justify-center hover:bg-gradient-to-b  from-[#5a5df7] to-[#563acc] hover:cursor-pointer
 hover:scale-102 transition-transform "
           >
             <AnimatePresence mode="wait">
@@ -97,7 +97,7 @@ hover:scale-102 transition-transform "
           </button>
         </motion.div>
         <motion.div
-          initial={{ y: -1000, opacity: 0 }}
+          initial={{ y: 100, opacity: 0 }}
           animate={hasScrolled ? { y: 0, opacity: 1 } : {}}
           transition={{
             type: "spring",
@@ -129,19 +129,7 @@ hover:scale-102 transition-transform "
         </motion.div>
       </section>
 
-      <motion.div
-        initial={{ y: 200, opacity: 0 }}
-        animate={hasScrolled ? { y: 0, opacity: 1 } : {}}
-        transition={{
-          type: "spring",
-          stiffness: 40,
-          damping: 8,
-          mass: 1.5,
-          duration: 0.5,
-        }}
-      >
-        <RollLogos />
-      </motion.div>
+      <RollLogos />
     </div>
   );
 };

@@ -358,7 +358,7 @@ export function PhoneInput({ onValueChange, ...props }: PhoneInputProps) {
   return (
     <div
       className={
-        "flex items-center gap-x-2 border border-[#949494]/50 xl:border-none rounded-full h-13 px-6 py-3.5 xl:p-0 w-full xl:w-auto"
+        "flex items-center gap-x-2 border border-[#949494]/50 xl:border-none rounded-full h-13 px-4 py-3.5 xl:p-0 w-full xl:w-auto"
       }
     >
       <Popover open={open} onOpenChange={setOpen}>
