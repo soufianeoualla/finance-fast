@@ -17,7 +17,17 @@ const FAQItem = ({
   index: number;
 }) => {
   return (
-    <div
+    <motion.div
+      initial={{ y: 100, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{
+        type: "spring",
+        stiffness: 40,
+        damping: 8,
+        mass: 1.5,
+        duration: 0.5,
+      }}
       onClick={handleExpand}
       className={cn(
         "xl:py-8 py-6 flex flex-col items-start cursor-pointer w-full",
@@ -34,14 +44,13 @@ const FAQItem = ({
         />
       </div>
       <motion.div
-      initial={{ opacity: 0, height: 0 }}
-      animate={{
-        opacity: isExpanded ? 1 : 0,
-        height: isExpanded ? "auto" : 0,
-      }}
-      exit={{ opacity: 0, height: 0 }}
-      transition={{ duration: 0.3 }}
-      
+        initial={{ opacity: 0, height: 0 }}
+        animate={{
+          opacity: isExpanded ? 1 : 0,
+          height: isExpanded ? "auto" : 0,
+        }}
+        exit={{ opacity: 0, height: 0 }}
+        transition={{ duration: 0.3 }}
       >
         {isExpanded && (
           <p className="text-custom-gray text-sm xl:text-base xl:mt-4 mt-3">
@@ -49,7 +58,7 @@ const FAQItem = ({
           </p>
         )}
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

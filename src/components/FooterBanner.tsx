@@ -8,17 +8,18 @@ import { motion } from "motion/react";
 const FooterBanner = () => {
   return (
     <motion.div
-    initial={{ y: 100, opacity: 0 }}
-    whileInView={{ y: 0, opacity: 1 }}
-    viewport={{ once: true }}
-    transition={{
-      type: "spring",
-      stiffness: 40,
-      damping: 8,
-      mass: 1.5,
-      duration: 0.5,
-    }}
-    className="flex flex-col xl:flex-row xl:justify-between items-center bg-dark-purple xl:px-14 px-4 xl:h-[406px] h-[436px] rounded-3xl mb-28 relative">
+      initial={{ y: 100, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{
+        type: "spring",
+        stiffness: 40,
+        damping: 8,
+        mass: 1.5,
+        duration: 0.5,
+      }}
+      className="flex flex-col xl:flex-row xl:justify-between items-center bg-dark-purple xl:px-14 px-4 xl:h-[406px] h-[436px] rounded-3xl mb-28 relative"
+    >
       <img src={lines} alt="" className="absolute top-0 left-0" />
       <div className="flex flex-col items-start gap-y-6 pt-14 xl:pt-0">
         <h1 className="grifter xl:text-[40px] text-xl leading-7 xl:leading-12 text-white ">
