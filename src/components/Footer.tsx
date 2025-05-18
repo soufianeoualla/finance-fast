@@ -42,7 +42,7 @@ const Footer = () => {
               Sign up for our newsletter
             </h2>
 
-            <div className="xl:w-[498px] w-full h-[50px] flex gap-x-2 rounded-3xl bg-white p-[5px] border border-[#949494]/50">
+            <div className="xl:w-[458px] w-full h-14 flex gap-x-2 rounded-4xl bg-white p-[5px] border border-[#949494]/50">
               <input
                 type="text"
                 placeholder="Enter email"
@@ -50,7 +50,7 @@ const Footer = () => {
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => setIsFocused(false)}
               />
-              <button className="bg-dark-purple w-[140px] flex justify-center items-center text-white text-sm xl:text-base rounded-3xl h-full hover:bg-gradient-to-b  from-[#5a5df7] to-[#563acc] cursor-pointer hover:scale-[102%] transition-transform">
+              <button className="bg-dark-purple cursor-pointer w-[180px] flex justify-center items-center text-white text-sm xl:text-base rounded-3xl h-full hover:bg-gradient-to-b  from-[#5a5df7] to-[#563acc] hover:scale-[102%] transition-transform">
                 <AnimatePresence mode="wait">
                   {isFocused ? (
                     <motion.span
@@ -59,7 +59,7 @@ const Footer = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.3 }}
-                      className="flex items-center"
+                      className="flex items-center cursor-pointer"
                     >
                       <LuMail size={20} />
                     </motion.span>
@@ -70,6 +70,7 @@ const Footer = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.3 }}
+                      className="flex items-center cursor-pointer"
                     >
                       Subscribe
                     </motion.span>

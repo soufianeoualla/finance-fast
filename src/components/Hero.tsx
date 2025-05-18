@@ -78,7 +78,7 @@ hover:scale-102 transition-transform "
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.3 }}
-                  className="flex items-center"
+                  className="flex items-center cursor-pointer"
                 >
                   <LuDownload size={20} />
                 </motion.span>
@@ -89,6 +89,7 @@ hover:scale-102 transition-transform "
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.3 }}
+                  className="flex items-center cursor-pointer"
                 >
                   Download Now
                 </motion.span>
