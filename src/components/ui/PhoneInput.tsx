@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import { cn } from "../../utils";
 import {
   Command,
@@ -13,8 +11,9 @@ import { Popover, PopoverContent, PopoverTrigger } from "./Popover";
 
 import { LuCheck, LuChevronDown } from "react-icons/lu";
 import countries from "../../countries.json";
+import { InputHTMLAttributes, useState } from "react";
 
-interface PhoneInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface PhoneInputProps extends InputHTMLAttributes<HTMLInputElement> {
   onValueChange?: (value: {
     country: string;
     phoneNumber: string;
@@ -23,14 +22,15 @@ interface PhoneInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 export function PhoneInput({ onValueChange, ...props }: PhoneInputProps) {
-  const [open, setOpen] = React.useState(false);
-  const [selectedCountry, setSelectedCountry] = React.useState({
+  const [open, setOpen] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState({
     code: "MA",
     name: "Morocco",
     flag: "🇲🇦",
     dialCode: "+212",
   });
-  const [phoneNumber, setPhoneNumber] = React.useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+
 
   const formatPhoneNumber = (value: string) => {
     const digits = value.replace(/\D/g, "");
